@@ -1,22 +1,32 @@
-@Service
-public class BookService {
-    private List<Book> books = new ArrayList<>();
+package phattrienungdungj2ee_bai2.service;
+import java.util.ArrayList;
+import java.util.List;
 
-    public List<Book> getAllBooks() {
+import org.springframework.stereotype.Service;
+
+import phattrienungdungj2ee_bai2.models.book;
+
+
+
+@Service
+public class Bookservice {
+    private List<book> books = new ArrayList<>();
+
+    public List<book> getAllBooks() {
         return books;
     }
 
-    public Book getBookById(int id) {
+    public book getBookById(int id) {
         return books.stream()
                 .filter(book -> book.getId() == id)
                 .findFirst()
                 .orElse(null);
     }
 
-    public void addBook(Book book) {
+    public void addBook(book book) {
         books.add(book);
     }
-    public void updateBook(int id, Book updatedBook) {
+    public void updateBook(int id, book updatedBook) {
     books.stream()
         .filter(book -> book.getId() == id)
         .findFirst()

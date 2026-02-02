@@ -1,25 +1,41 @@
+package phattrienungdungj2ee_bai2.controller;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import phattrienungdungj2ee_bai2.models.book;
+import phattrienungdungj2ee_bai2.service.Bookservice;
 @RestController
+
 @RequestMapping("/api/books") // Base URL cho tất cả API trong controller
-public class BookController {
+public class bookcontroller {
 
     @Autowired
-    private BookService bookService;
+    private Bookservice bookService;
 
     // 1. Lấy danh sách tất cả sách
     @GetMapping
-    public List<Book> getAllBooks() {
+    public List<book> getAllBooks() {
         return bookService.getAllBooks();
     }
 
     // 2. Lấy thông tin sách theo ID
     @GetMapping("/{id}")
-    public Book getBookById(@PathVariable int id) {
+    public book getBookById(@PathVariable int id) {
         return bookService.getBookById(id);
     }
 
     // 3. Thêm sách mới
     @PostMapping
-    public String addBook(@RequestBody Book book) {
+    public String addBook(@RequestBody book book) {
         bookService.addBook(book);
         return "Book added successfully!";
     }
@@ -27,7 +43,7 @@ public class BookController {
     // 4. Cập nhật thông tin sách
     @PutMapping("/{id}")
     public String updateBook(@PathVariable int id,
-                             @RequestBody Book updatedBook) {
+                             @RequestBody book updatedBook) {
         bookService.updateBook(id, updatedBook);
         return "Book updated successfully!";
     }

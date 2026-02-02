@@ -1,13 +1,14 @@
-public class Book {
+package phattrienungdungj2ee_bai2.models;
+public class book {
     private int id;
     private String title;
     private String author;
 
     // Constructors
-    public Book() {
+    public book() {
     }
 
-    public Book(int id, String title, String author) {
+    public book(int id, String title, String author) {
         this.id = id;
         this.title = title;
         this.author = author;
