@@ -1,4 +1,4 @@
-package phattrienungdungj2ee_bai2.controller;
+package com.example.demo.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import phattrienungdungj2ee_bai2.models.book;
-import phattrienungdungj2ee_bai2.service.Bookservice;
+import com.example.demo.models.book;
+import com.example.demo.service.Bookservice;
 @RestController
 
 @RequestMapping("/api/books") // Base URL cho tất cả API trong controller

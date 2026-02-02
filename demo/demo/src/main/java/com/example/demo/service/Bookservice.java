@@ -1,10 +1,10 @@
-package phattrienungdungj2ee_bai2.service;
+package com.example.demo.service;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import phattrienungdungj2ee_bai2.models.book;
+import com.example.demo.models.book;
 
 
 

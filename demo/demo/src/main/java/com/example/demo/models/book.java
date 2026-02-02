@@ -1,4 +1,4 @@
-package phattrienungdungj2ee_bai2.models;
+package com.example.demo.models;
 public class book {
     private int id;
     private String title;
